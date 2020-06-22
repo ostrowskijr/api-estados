@@ -1,6 +1,7 @@
 const express = require("express");
 const Estado = require("./database/models/Estados");
 const bodyParser = require("body-parser");
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(bodyParser.json());
@@ -28,7 +29,7 @@ app.post("/estados", (req, res, next) => {
     })
 })
 
-app.listen(3000, (error)=>{
+app.listen(port, (error)=>{
     if (error) {
         console.log("Erro ao subir servidor: " + error);        
     } else {
