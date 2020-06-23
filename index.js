@@ -7,8 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    //res.send("Minha primeira API Rest em Node Js...");
-    res.render("index");
+    res.send("API-Restfull desenvolvida em NodeJs para retorno de Estados Brasileiros...");
 })
 
 app.get("/estados", (req, res, next) => {
