@@ -6,6 +6,12 @@ const port = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.json());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // Aceita requisições de qualquer origem, api apenas para teste, ambiente produção não é recomendado.
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get("/", (req, res) => {
     res.send("API-Restfull desenvolvida em NodeJs para retorno de Estados Brasileiros...");
 })
